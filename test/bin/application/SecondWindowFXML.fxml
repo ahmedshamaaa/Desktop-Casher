@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="secondWindowRootPane" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SecondWindowController">
+    <!-- Add your components for the second window here -->
+    <Label text="Paid:" layoutX="19.0" layoutY="14.0" />
+    <TextField fx:id="cashAmountField" layoutX="123.0" layoutY="11.0" />
+    <Label text="Total:" layoutX="19.0" layoutY="52.0" />
+    <Label fx:id="invoiceTotalLabel" layoutX="123.0" layoutY="52.0" />
+    <Label text="Change:" layoutX="19.0" layoutY="90.0" />
+    <Label fx:id="changeLabel" layoutX="123.0" layoutY="90.0" />
+    <Button fx:id="finalizeButton" text="Finish" layoutX="123.0" layoutY="133.0"  onAction="#onFinalizeButtonClicked"/>
+    
+</AnchorPane>
