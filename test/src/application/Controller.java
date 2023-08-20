@@ -113,12 +113,8 @@ public class Controller {
         }
     }
 
-/////////////////////####################################################################
-/////////////////////####################################################################
     private void handleInvoiceFinalized() {
         // Perform database update and UI clearing here
-    	
-    	
         try {
         	secondWindowController.insertInvoiceIntoDatabase(currentInvoiceNumber, invoiceItems);
             showAlertt("Success", "Invoice has been successfully inserted into the database.", Alert.AlertType.INFORMATION);
@@ -230,9 +226,9 @@ public class Controller {
         for (int i = 0; i < invoiceItems.size(); i++) {
             // Assuming Label has a constructor that takes three parameters: itemBarcode, itemName, and itemPrice
             Label label = new Label(
-            		"Item barcode: " +
-                itemList.getItems().get(i).getItemBarcode() + ", " + "Item name: " +
-                itemList.getItems().get(i).getItemName() +", " +"Item price: " + 
+            		"" +
+                itemList.getItems().get(i).getItemBarcode() + " 		" +
+                itemList.getItems().get(i).getItemName() +" 			  " + 
                 itemList.getItems().get(i).getItemPrice()
             );
             L.add(label);
@@ -247,11 +243,15 @@ public class Controller {
             new Label("*****************************"),
             new Label("Invoice Number: " + currentInvoiceNumber),
             new Label("Time: " + hourr + ":" + minutee + ":" + secondd),
-            new Label("Date: " + year + "/" + month + "/" + day));
+            new Label("Date: " + year + "/" + month + "/" + day),
+            new Label("Item barcode " + "  Item name "+"    		 Item price " )
+        		);
 //            new Label("Items quantity: "+itemCounts),
 //            new Label("Items price"+itemPrices),
 //            new Label("Item total price"+itemTotals),
+        	
         	printContent.getChildren().addAll(L);
+        	
         	printContent.getChildren().addAll(
             new Label("____________________________________"),
             new Label("Total Amount: " + calculateInvoiceTotal() + " EGP"),
